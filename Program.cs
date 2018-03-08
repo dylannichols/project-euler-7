@@ -26,11 +26,14 @@ namespace project_euler_7
                 for (var j = 0; j < 13; j++)
                 {
                     smallArray[j] = (int)char.GetNumericValue(number[(i + j)]);
-                }
-                if (GetProduct(smallArray) > biggest)
-                {
-                    biggest = GetProduct(smallArray);
-                    biggestArray = smallArray;
+                    if (GetProduct(smallArray) > biggest)
+                    {
+                        biggest = GetProduct(smallArray);
+                        for (var k = 0; k < 13; k++)
+                        {
+                            biggestArray[k] = smallArray[k];
+                        }
+                    }
                 }
             }
             return biggest;
