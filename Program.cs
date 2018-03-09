@@ -17,14 +17,15 @@ namespace project_euler_7
 
         }
 
-        public static int BuildArray()
+        public static long BuildArray()
         {
-            int biggest = 0;
+            long biggest = 0;
             int[] smallArray = new int[13];
             for (var i = 0; i < 988; i++)
             {
                 for (var j = 0; j < 13; j++)
                 {
+                    Console.WriteLine(number[i+j]);
                     smallArray[j] = (int)char.GetNumericValue(number[(i + j)]);
                     if (GetProduct(smallArray) > biggest)
                     {
@@ -39,10 +40,10 @@ namespace project_euler_7
             return biggest;
         }
 
-        public static int GetProduct(int[] array)
+        public static long GetProduct(int[] array)
         {
-            int product = 1;
-            for (var i = 1; i < array.Length; i++)
+            long product = 1;
+            for (var i = 0; i < array.Length; i++)
             {
                 product *= array[i];
             }
