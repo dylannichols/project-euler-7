@@ -25,7 +25,6 @@ namespace project_euler_7
             {
                 for (var j = 0; j < 13; j++)
                 {
-                    Console.WriteLine(number[i+j]);
                     smallArray[j] = (int)char.GetNumericValue(number[(i + j)]);
                     if (GetProduct(smallArray) > biggest)
                     {
